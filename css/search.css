@@ -1652,9 +1652,10 @@ input:focus:-ms-input-placeholder {
 .mf-search-popup-close {
 	width: 20px;
 	height: 20px;
-	position: sticky;
-	top: 0px;
+	position: absolute;
+	top: 20px;
 	/* left: 0; */
+	right: 20px;
 	align-items: auto;
 	align-self: flex-end;
 	flex-shrink: 0;
