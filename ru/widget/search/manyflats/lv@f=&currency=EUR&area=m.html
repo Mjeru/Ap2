@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="robots" content="noindex">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../../../../css/search.css">
+</head>
+<body>
+
+<div class="animated form-geo">
+    <div class="mf-search-form-block">
+    <div class="container">
+        <form id="search-form" name="search_form" class="search-form loaded" action="https://manyflats.com/ru/widget/search/manyflats/lv" placeholderservice="https://manyflats.com/ru/widget/search/query" target="_self">
+            <input type="hidden" name="currency" value="EUR">
+            <input type="hidden" name="area" value="m">
+            <label class="search-label">
+                <input name="f" class="search-field whith-clear" type="text" placeholder="Город, регион, район, улица или адрес" value="">
+                <div class="mf-search-clear-input"></div>
+                <label class="searcharea hidden">
+                    <input type="checkbox" id="geo-search" name="geo_search" value="1" >
+                    <span>Искать рядом со мной</span>
+                    <input type="text" id="#la" name="la" style="display: none;">
+                    <input type="text" id="#lo" name="lo" style="display: none;">
+                </label>
+            </label>
+
+            <select id="status" name="status" class="tostyle">
+                <option value="all">
+                                            Все
+                                    </option>
+                                    <option value="buy">
+                        Купить
+                    </option>
+                                                    <option value="rent">
+                        Снять
+                    </option>
+                                                
+            </select>
+
+            <select id="object" name="object" class="tostyle">
+                <option value="all">
+                                            Все объекты
+                                    </option>
+                                    <option value="flat">
+                        Квартиру
+                    </option>
+                                                    <option value="house">
+                        Дом
+                    </option>
+                                                    <option value="land">
+                        Землю
+                    </option>
+                                                    <option value="office">
+                        Офис
+                    </option>
+                                                    <option value="building">
+                        Здание
+                    </option>
+                                                    <option value="room">
+                        Комната
+                    </option>
+                                                    <option value="garage">
+                        Гараж, парковку
+                    </option>
+                                                    <option value="commerce">
+                        Коммерческую недвижимость
+                    </option>
+                                                    <option value="warehouse">
+                        Склад
+                    </option>
+                                                    <option value="premise">
+                        Помещение
+                    </option>
+                                            </select>
+
+            <div class="search__drop mf-searchform-price-block">
+                <a href="#" class="search__drop search__drop-link">Цена</a>
+                <ul class="sub__menu multi-col hidden dropdown-search price-drop bu center">
+                    <li>
+                        <div class="price-interval">
+                            <label class="search-label dropdown-label">
+                                <input name="min_price" class="min_price price-field whith-clear" type="text" pattern="^[0-9']*$" placeholder="Цена от ..." value="">
+                                <div class="mf-search-clear-input js-clear-price-input"></div>
+                            </label>
+                            <span>-</span>
+                            <label class="search-label">
+                                <input name="max_price" class="max_price price-field whith-clear" type="text" pattern="^[0-9']*$" placeholder="до ..." value="">
+                                <div class="mf-search-clear-input js-clear-price-input"></div>
+                            </label>
+                            <span>€</span>
+                        </div>
+                        <div class="price-interval">
+                            <label class="search-form-price-unit-label">
+                                <input type="radio" name="unit" class="pricebox" value="0" checked>
+                                всё
+                            </label>
+                            <label class="search-form-price-unit-label">
+                                <input type="radio" name="unit" class="pricebox" value="1">
+                                м²
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="search__drop mf-searchform-room-block">
+                <a href="#" class="search__drop search__drop-link">Комнат</a>
+                <ul class="sub__menu multi-col hidden dropdown-search price-drop right">
+                    <li class="search-form-room-block">
+                        <label class="search-form-room-label">
+                            <input type="checkbox" name="studio" class="search-form-room-checkbox" value="1" >
+                            Студии
+                        </label>
+                        <label class="search-form-room-label">
+                            <input type="checkbox" name="room1" class="search-form-room-checkbox" value="1" >
+                            1
+                        </label>
+                        <label class="search-form-room-label">
+                            <input type="checkbox" name="room2" class="search-form-room-checkbox" value="1" >
+                            2
+                        </label>
+                        <label class="search-form-room-label">
+                            <input type="checkbox" name="room3" class="search-form-room-checkbox" value="1" >
+                            3
+                        </label>
+                        <label class="search-form-room-label">
+                            <input type="checkbox" name="room4" class="search-form-room-checkbox" value="1" >
+                            4
+                        </label>
+                        <label class="search-form-room-label with-slash">
+                            <input type="checkbox" name="room5" class="search-form-room-checkbox" value="1" >
+                            5+
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="search__drop mf-searchform-best-block">
+                <a href="#" class="search__drop search__drop-link">Лучшее</a>
+                <ul class="sub__menu hidden dropdown-search price-drop ">
+                    <li class="search-form-best-item">
+                        <label class="search-form-best-label">
+                            <input type="checkbox" name="best_profit" class="search-form-best-checkbox" value="1" >
+                            Выгодные по цене
+                        </label>
+                    </li>
+                    <li class="search-form-best-item">
+                        <label class="search-form-best-label">
+                            <input type="checkbox" name="best_payback" class="search-form-best-checkbox" value="1" >
+                            Выгодные по окупаемости
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="search__drop">
+                <a href="#" class="search__drop search__drop-link">Фильтры</a>
+                <ul class="sub__menu hidden filter-drop-list">
+                    <li>
+                        <a href="#" class="filter-label all-filters">
+                            Больше фильтров
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <span>
+                <button class="search-button animated" type="submit">
+                    <svg enable-background="new 0 0 512 512" height="30px" width="30px" id="Layer_1" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g>
+                            <path d="M338.279,307.471l96.115,96.115l0,0c11.402,11.403,12.125,31.003,0.078,43.053    c-12.051,12.051-31.707,11.659-43.754-0.389l-95.609-95.608L338.279,307.471" fill="white" />
+                            <path d="M356.199,325.391l-21.992,21.992l99.516,99.516l0.42,0.065l0.068-0.066    c11.98-12.054,11.566-31.929,0.184-43.312l0,0L356.199,325.391" fill="white" />
+                            <path d="M95.538,107.282c-67.688,67.689-67.688,177.432,0,245.12c67.688,67.688,177.431,67.688,245.121,0    c67.688-67.688,67.686-177.431-0.002-245.118C272.967,39.596,163.225,39.596,95.538,107.282z M306.553,321.104    c-49.486,49.486-129.718,49.487-179.207,0c-49.485-49.486-49.484-129.719,0.002-179.205    c49.485-49.486,129.718-49.487,179.205-0.001C356.039,191.385,356.039,271.617,306.553,321.104z" fill="white" />
+                        </g>
+                    </svg>
+                    <span>Поиск</span>
+                </button>
+            </span>
+        </form>
+    </div>
+</div>
+
+<div class="mf-search-mobile-block">
+     <span>
+        <button class="search-button animated mf-search-mobile-button">
+            <svg enable-background="new 0 0 512 512" height="30px" width="30px" id="Layer_1" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g>
+                    <path d="M338.279,307.471l96.115,96.115l0,0c11.402,11.403,12.125,31.003,0.078,43.053    c-12.051,12.051-31.707,11.659-43.754-0.389l-95.609-95.608L338.279,307.471" fill="white" />
+                    <path d="M356.199,325.391l-21.992,21.992l99.516,99.516l0.42,0.065l0.068-0.066    c11.98-12.054,11.566-31.929,0.184-43.312l0,0L356.199,325.391" fill="white" />
+                    <path d="M95.538,107.282c-67.688,67.689-67.688,177.432,0,245.12c67.688,67.688,177.431,67.688,245.121,0    c67.688-67.688,67.686-177.431-0.002-245.118C272.967,39.596,163.225,39.596,95.538,107.282z M306.553,321.104    c-49.486,49.486-129.718,49.487-179.207,0c-49.485-49.486-49.484-129.719,0.002-179.205    c49.485-49.486,129.718-49.487,179.205-0.001C356.039,191.385,356.039,271.617,306.553,321.104z" fill="white" />
+                </g>
+            </svg>
+            <span>Поиск</span>
+        </button>
+    </span>
+</div>
+</div>
+
+<h3 class="search-topic">
+            Результаты поиска по <span>4690</span> объектам недвижимости (0.00 сек.)
+    </h3>
+
+<div class="top-properties-container">
+    <div class="properties">
+                    <div>
+    <div>
+        
+        
+        <a href="#" class="property-name" onclick="return mf_open_window('https://manyflats.com/click?l=https%3A%2F%2Fss24.io%2Fru%2FwM99Ww.html&amp;d=2020-10-13&amp;h=06e98b471a891e657a26f3d970354e01');" rel="nofollow">
+            Сдам дом с 5 комн. - 230 кв.м.
+                            - <span style="color:#ce0e11">
+                    <span>1&nbsp;500</span>€/мес.
+                </span>
+                                    </a>
+
+        <span class="property-desc">
+            Латвия. Земельный участок дома 735 кв.м. Все удобства. Частный дом. Хороший ремонт. Квартира мебелирована. 
+                    </span>
+        <span class="mf-searchresult-date" style="font-size: 70%">13.10.2020</span></span>
+        
+        <span class="mf-searchresult-photo">
+            
+            
+                                              Фото:
+                                                        <button  data-id="1"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/01/3d9ed1b2b6c0d05602fa19348816fd41.jpg');" rel="nofollow">1</button>
+                                                                            <button  data-id="1"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/01/a72cc0797ccd114c4aad35b770a04bb1.jpg');" rel="nofollow">2</button>
+                                                                            <button  data-id="1"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/01/a74ed10db7924d63ea3b904be0f63b70.jpg');" rel="nofollow">3</button>
+                                                                                <a data-id="1" class="mf-ellipsis-1 mf-expand-images"><b>&hellip;</b></a>
+                        <span class="mf-hide-images mf-images-1" style="display:none">
+                                        <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/01/dc75364718a210db8aa4f6b6e14f0bd3.jpg');" rel="nofollow">4</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/01/d4da7beb122e12eb129f8ab366a5e343.jpg');" rel="nofollow">5</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/01/0071906d958f422cb4de6559e86c0003.jpg');" rel="nofollow">6</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/01/77885bfc5c109a4e4e898153fe028c2e.jpg');" rel="nofollow">7</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/01/6645db0c30b12eb6d8cf5a499f2ea2c8.jpg');" rel="nofollow">8</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/01/98a2b143b754d0626cd7edce3d1d668a.jpg');" rel="nofollow">9</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/01/d50a048a8e375e3db1e86ef75e2a9da2.jpg');" rel="nofollow">10</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/01/9c4c2aa7fa93c3d6aa989afaee8577e3.jpg');" rel="nofollow">11</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/01/5b9792a36039d82333e4c80e05910ad8.jpg');" rel="nofollow">12</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/01/45e38dfed5034fd32962ff3df82b92a6.jpg');" rel="nofollow">13</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/01/73aeb889ab54daea76b85eef7e7fbb56.jpg');" rel="nofollow">14</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/01/4d6508c91b96f03f55e5fd5c77200fcb.jpg');" rel="nofollow">15</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/01/d1ed11b7103aa15f7298dccd03135d73.jpg');" rel="nofollow">16</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/01/1bf52f94ebebd27dc1afcfe2c2ce9502.jpg');" rel="nofollow">17</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/01/c8d2ba35531d20f2d51e8f59f95eb76c.jpg');" rel="nofollow">18</button>
+                                            </span>
+                                                                            <button  data-id="1"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/01/0f0531c6c908458bdd7d01fcfd1db482.jpg');" rel="nofollow">19</button>
+                                                                            <button  data-id="1"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/01/70ad5a1e6c23b26bfe2f5808e60fda69.jpg');" rel="nofollow">20</button>
+                                                
+                             &middot;                 <a href="https://manyflats.com/ru/widget/search/manyflats/lv/profit/c8c0528f0a125c974937aa611ba62250" onclick="return mf_open_window('https://manyflats.com/ru/widget/search/manyflats/lv/profit/c8c0528f0a125c974937aa611ba62250');" class="property-city" rel="nofollow">
+                                            Анализ цены
+                                                        </a>
+             
+             
+                                    </span>
+
+        <span class="property-links">
+            
+        </span>
+    </div>
+</div>
+                    <div>
+    <div>
+        
+        
+        <a href="#" class="property-name" onclick="return mf_open_window('https://manyflats.com/click?l=https%3A%2F%2Fss24.io%2Fru%2F3BYYpn.html&amp;d=2020-10-13&amp;h=57c38aab39b1d935a7dd24bcf1d1ce93');" rel="nofollow">
+            Сдам квартиру - 2 комн. - 16 эт. - 67 кв.м.
+                            - <span style="color:#ce0e11">
+                    <span>650</span>€/мес.
+                </span>
+                                    </a>
+
+        <span class="property-desc">
+            Латвия. Новостройка. Все удобства. Хороший ремонт. Квартира мебелирована. 
+                    </span>
+        <span class="mf-searchresult-date" style="font-size: 70%">13.10.2020</span></span>
+        
+        <span class="mf-searchresult-photo">
+            
+            
+                                              Фото:
+                                                        <button  data-id="2"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/832315cebb032a3d1599d74794fb5128.jpg');" rel="nofollow">1</button>
+                                                                            <button  data-id="2"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/ce48e90a2de19bdbab952c0ecdb570d5.jpg');" rel="nofollow">2</button>
+                                                                            <button  data-id="2"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/ff3d57091404bc88eae86ff6d1706139.jpg');" rel="nofollow">3</button>
+                                                                                <a data-id="2" class="mf-ellipsis-2 mf-expand-images"><b>&hellip;</b></a>
+                        <span class="mf-hide-images mf-images-2" style="display:none">
+                                        <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/03da12d7fd63bdf607f1aa8192cd064f.jpg');" rel="nofollow">4</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/4097fa695439e247f6a337f9c3ae2bda.jpg');" rel="nofollow">5</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/83d59d50a7bcb8028bfa75dc8746ff16.jpg');" rel="nofollow">6</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/2c5e9d417d87c3a7854d663410f84d8c.jpg');" rel="nofollow">7</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/c62cfa91ad78213a23d3e110350a7ed8.jpg');" rel="nofollow">8</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/62287290115bdbba55271e79047ea46a.jpg');" rel="nofollow">9</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/9f29a7a425c9acbf0e355469d706b5c0.jpg');" rel="nofollow">10</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/081f2eea122b798f7ec2219cc36639ea.jpg');" rel="nofollow">11</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/c6ff519c361a74ffd9492e47f5d87820.jpg');" rel="nofollow">12</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/4c58207381bc710e0432bf6901123814.jpg');" rel="nofollow">13</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/53d8f96f04f93d7f94555369359c669e.jpg');" rel="nofollow">14</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/ddd4c2d75e80dc92c52e5554b1aed306.jpg');" rel="nofollow">15</button>
+                                            </span>
+                                                                            <button  data-id="2"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/967e7551297b808b314ae34492fe2d36.jpg');" rel="nofollow">16</button>
+                                                                            <button  data-id="2"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/beffebd80e217c005e72077b1d0a634e.jpg');" rel="nofollow">17</button>
+                                                
+                             &middot;                 <a href="https://manyflats.com/ru/widget/search/manyflats/lv/profit/68f69b95617e10a69815dbf9417b45a4" onclick="return mf_open_window('https://manyflats.com/ru/widget/search/manyflats/lv/profit/68f69b95617e10a69815dbf9417b45a4');" class="property-city" rel="nofollow">
+                                            Выгодная цена
+                                                                <span class="property-profit">(<span>73</span>€)</span>
+                                    </a>
+             
+             
+                                    </span>
+
+        <span class="property-links">
+            
+        </span>
+    </div>
+</div>
+                    <div>
+    <div>
+        
+        
+        <a href="#" class="property-name" onclick="return mf_open_window('https://manyflats.com/click?l=https%3A%2F%2Fss24.io%2Fru%2FwXddOw.html&amp;d=2020-10-13&amp;h=9c919e3e6dd6b0335c04fc3f11745491');" rel="nofollow">
+            Продам квартиру - 3 комн. - 2 эт. - 112 кв.м.
+                            - <span style="color:#ce0e11">
+                    <span>259&nbsp;750</span>€
+                </span>
+                                    </a>
+
+        <span class="property-desc">
+            Латвия. Новостройка. Все удобства. Хороший ремонт. 
+                    </span>
+        <span class="mf-searchresult-date" style="font-size: 70%">13.10.2020</span></span>
+        
+        <span class="mf-searchresult-photo">
+            
+            
+                                              Фото:
+                                                        <button  data-id="3"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/ed28535982018b2ddf9915fa632b0fc6.jpg');" rel="nofollow">1</button>
+                                                                            <button  data-id="3"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/ecc8ed905dd7271fb0caff79b591b36e.jpg');" rel="nofollow">2</button>
+                                                                            <button  data-id="3"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/a67fd4e0974b547696a8a36fae0fa996.jpg');" rel="nofollow">3</button>
+                                                                                <a data-id="3" class="mf-ellipsis-3 mf-expand-images"><b>&hellip;</b></a>
+                        <span class="mf-hide-images mf-images-3" style="display:none">
+                                        <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/408c00bb1d2977ce635f85088566ffdd.jpg');" rel="nofollow">4</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/8bcf31621988b96c6727cdbc7069b85a.jpg');" rel="nofollow">5</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/4891a4dd0a1e149bf10968a5b5e7fcff.jpg');" rel="nofollow">6</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/dca0c0540c6d32228086248e02c45e0a.jpg');" rel="nofollow">7</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/35463d55632d608062adf389e6902018.jpg');" rel="nofollow">8</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/81fac2be5058e328f9d3b255e2573a9d.jpg');" rel="nofollow">9</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/cbc78cd60223b21bf93e8fc7b5f2d8a8.jpg');" rel="nofollow">10</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/3927bee0b6f725eb2399961720fec857.jpg');" rel="nofollow">11</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/2dd4bf9fcb4a7ed6d9cec9a5abb95e2e.jpg');" rel="nofollow">12</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/206aeef85707de3a7f06338c456e43e2.jpg');" rel="nofollow">13</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/15e1ab888ea610c36599c150868600d3.jpg');" rel="nofollow">14</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/81112b29c1183f8e96ffe60fb16071e7.jpg');" rel="nofollow">15</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/05bdd262e4f8fd7f7868079abf80eaf3.jpg');" rel="nofollow">16</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/bc5326273bedf6bdf11a1bde65a34c2c.jpg');" rel="nofollow">17</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/769dccd601d23e4236184a2c77f0d5f7.jpg');" rel="nofollow">18</button>
+                                            </span>
+                                                                            <button  data-id="3"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/3d78fc548a5155ed9bfa750865c87725.jpg');" rel="nofollow">19</button>
+                                                                            <button  data-id="3"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/00/0e0aa3dfda4377b4919c26188e35efdd.jpg');" rel="nofollow">20</button>
+                                                
+                             &middot;                 <a href="https://manyflats.com/ru/widget/search/manyflats/lv/profit/dc1f503dc460cda3b310b679e805668f" onclick="return mf_open_window('https://manyflats.com/ru/widget/search/manyflats/lv/profit/dc1f503dc460cda3b310b679e805668f');" class="property-city" rel="nofollow">
+                                            Выгодная цена
+                                                                <span class="property-profit">(<span>2&nbsp;867</span>€)</span>
+                                    </a>
+             
+             
+                                    </span>
+
+        <span class="property-links">
+            
+        </span>
+    </div>
+</div>
+                    <div>
+    <div>
+        
+        
+        <a href="#" class="property-name" onclick="return mf_open_window('https://manyflats.com/click?l=https%3A%2F%2Fss24.io%2Fru%2F3mmpp9.html&amp;d=2020-10-13&amp;h=88c24fb7c98d5d8adce29cdd3ec6257c');" rel="nofollow">
+            Сдам квартиру - 2 комн. - 6 эт. - 62 кв.м.
+                            - <span style="color:#ce0e11">
+                    <span>800</span>€/мес.
+                </span>
+                                    </a>
+
+        <span class="property-desc">
+            Латвия. Довоенный дом. Все удобства. Хороший ремонт. Квартира мебелирована. 
+                    </span>
+        <span class="mf-searchresult-date" style="font-size: 70%">13.10.2020</span></span>
+        
+        <span class="mf-searchresult-photo">
+            
+            
+                                              Фото:
+                                                        <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/04/e1feced356195d57d6b702f4b9b908f3.jpg');" rel="nofollow">1</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/04/decb55a1e2eede011948b09321bca8dd.jpg');" rel="nofollow">2</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/04/7030fdcb1035093a83ad1671ebe57759.jpg');" rel="nofollow">3</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/04/db0bc5563ee61da7e41b12d2ccfa6b03.jpg');" rel="nofollow">4</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/04/c0233e03c3d43041f81bf111af06daee.jpg');" rel="nofollow">5</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/04/51ca0f0e15ea8f30e37798d9e4b7688b.jpg');" rel="nofollow">6</button>
+                                                
+                             &middot;                 <a href="https://manyflats.com/ru/widget/search/manyflats/lv/profit/206c0c4e74cfdadbd14d589138ae2bdf" onclick="return mf_open_window('https://manyflats.com/ru/widget/search/manyflats/lv/profit/206c0c4e74cfdadbd14d589138ae2bdf');" class="property-city" rel="nofollow">
+                                            Анализ цены
+                                                        </a>
+             
+             
+                                    </span>
+
+        <span class="property-links">
+            
+        </span>
+    </div>
+</div>
+                    <div>
+    <div>
+        
+        
+        <a href="#" class="property-name" onclick="return mf_open_window('https://manyflats.com/click?l=https%3A%2F%2Fss24.io%2Fru%2F3B7aaq.html&amp;d=2020-10-13&amp;h=bc79a2f43b244e40c45760576f9c42d9');" rel="nofollow">
+            Сдам квартиру - 2 комн. - 6 эт. - 62 кв.м.
+                    </a>
+
+        <span class="property-desc">
+            Латвия. Довоенный дом. Все удобства. Хороший ремонт. Квартира мебелирована. 
+                    </span>
+        <span class="mf-searchresult-date" style="font-size: 70%">13.10.2020</span></span>
+        
+        <span class="mf-searchresult-photo">
+            
+            
+                                              Фото:
+                                                        <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/04/dade4165254a5306986cd5da3d6b9d76.jpg');" rel="nofollow">1</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/04/c4ea360b3be9b493ea0929a76ad443bb.jpg');" rel="nofollow">2</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/04/9e0b5b2e8de277872e3100ef924806a6.jpg');" rel="nofollow">3</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/04/7b0b1789694ba454e0c58448a1153ee4.jpg');" rel="nofollow">4</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/04/ba1878ea8810a078d7df1ff61942170c.jpg');" rel="nofollow">5</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/04/aa13435bf083d3cd0a9babe59b67f0f7.jpg');" rel="nofollow">6</button>
+                                                
+            
+             
+                                    </span>
+
+        <span class="property-links">
+            
+        </span>
+    </div>
+</div>
+                    <div>
+    <div>
+        
+        
+        <a href="#" class="property-name" onclick="return mf_open_window('https://manyflats.com/click?l=https%3A%2F%2Fss24.io%2Fru%2FwX8xxr.html&amp;d=2020-10-13&amp;h=b05535767fd64dc699f999f812fc5038');" rel="nofollow">
+            Сдам квартиру - 2 комн. - 6 эт. - 58 кв.м.
+                            - <span style="color:#ce0e11">
+                    <span>650</span>€/мес.
+                </span>
+                                    </a>
+
+        <span class="property-desc">
+            Латвия. Довоенный дом. Все удобства. Хороший ремонт. Квартира мебелирована. 
+                    </span>
+        <span class="mf-searchresult-date" style="font-size: 70%">13.10.2020</span></span>
+        
+        <span class="mf-searchresult-photo">
+            
+            
+                                              Фото:
+                                                        <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/04/7b1d150ab8200d923c7bfd3ec01f6e9b.jpg');" rel="nofollow">1</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/04/6a5d703894a47a5080bf6d3cdf42e455.jpg');" rel="nofollow">2</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/04/b7ba9030dd49b2dc936c3c5106927c82.jpg');" rel="nofollow">3</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/04/d21661e7e92b86b67de36b1402505833.jpg');" rel="nofollow">4</button>
+                                                
+                             &middot;                 <a href="https://manyflats.com/ru/widget/search/manyflats/lv/profit/97edc6f6e444d59ba836893547edbba6" onclick="return mf_open_window('https://manyflats.com/ru/widget/search/manyflats/lv/profit/97edc6f6e444d59ba836893547edbba6');" class="property-city" rel="nofollow">
+                                            Анализ цены
+                                                        </a>
+             
+             
+                                    </span>
+
+        <span class="property-links">
+            
+        </span>
+    </div>
+</div>
+                    <div>
+    <div>
+        
+        
+        <a href="#" class="property-name" onclick="return mf_open_window('https://manyflats.com/click?l=https%3A%2F%2Fss24.io%2Fru%2F5jX44J.html&amp;d=2020-10-13&amp;h=2faef5f2c7c8e0ed5de83fe7dbc07461');" rel="nofollow">
+            Сдам квартиру - 2 комн. - 6 эт. - 58 кв.м.
+                    </a>
+
+        <span class="property-desc">
+            Латвия. Довоенный дом. Все удобства. Хороший ремонт. Квартира мебелирована. 
+                    </span>
+        <span class="mf-searchresult-date" style="font-size: 70%">13.10.2020</span></span>
+        
+        <span class="mf-searchresult-photo">
+            
+            
+                                              Фото:
+                                                        <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/52041cf8c11c6ec81f2a361e2de01488.jpg');" rel="nofollow">1</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/04/065576661b3c7f6301bf4184c108ce44.jpg');" rel="nofollow">2</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/04/58943a1e98ff885b07ad9059e4cb2a65.jpg');" rel="nofollow">3</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/04/28818759629408fb86a053ffbaf0a425.jpg');" rel="nofollow">4</button>
+                                                
+            
+             
+                                    </span>
+
+        <span class="property-links">
+            
+        </span>
+    </div>
+</div>
+                    <div>
+    <div>
+        
+        
+        <a href="#" class="property-name" onclick="return mf_open_window('https://manyflats.com/click?l=https%3A%2F%2Fss24.io%2Fru%2FwbvDDP.html&amp;d=2020-10-13&amp;h=19a7b47d9bab8bfc567f018cbb2d1cbe');" rel="nofollow">
+            Сдам квартиру - 2 комн. - 5 эт. - 69 кв.м.
+                            - <span style="color:#ce0e11">
+                    <span>650</span>€/мес.
+                </span>
+                                    </a>
+
+        <span class="property-desc">
+            Латвия. Довоенный дом. Все удобства. Хороший ремонт. Квартира мебелирована. 
+                    </span>
+        <span class="mf-searchresult-date" style="font-size: 70%">13.10.2020</span></span>
+        
+        <span class="mf-searchresult-photo">
+            
+            
+                                              Фото:
+                                                        <button  data-id="8"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/791a611f331aa4da90e6f53f297fff08.jpg');" rel="nofollow">1</button>
+                                                                            <button  data-id="8"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/2818646c79ffe2ce4bd29add9e08c601.jpg');" rel="nofollow">2</button>
+                                                                            <button  data-id="8"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/dd5077a2da1b544f4130660d2c886ecc.jpg');" rel="nofollow">3</button>
+                                                                                <a data-id="8" class="mf-ellipsis-8 mf-expand-images"><b>&hellip;</b></a>
+                        <span class="mf-hide-images mf-images-8" style="display:none">
+                                        <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/d8ab7cc1976ba1e86b0e8e0fa52e99d0.jpg');" rel="nofollow">4</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/5c41d520b99933597b7f1bcf614306fe.jpg');" rel="nofollow">5</button>
+                                            </span>
+                                                                            <button  data-id="8"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/5bcc1d4469a57f5bc2fb67fd15946d51.jpg');" rel="nofollow">6</button>
+                                                                            <button  data-id="8"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/2b48a9f635f3b9caa0e1b3c51cee05be.jpg');" rel="nofollow">7</button>
+                                                
+                             &middot;                 <a href="https://manyflats.com/ru/widget/search/manyflats/lv/profit/05596fde9cf343b61c6c4f50f78a2c6c" onclick="return mf_open_window('https://manyflats.com/ru/widget/search/manyflats/lv/profit/05596fde9cf343b61c6c4f50f78a2c6c');" class="property-city" rel="nofollow">
+                                            Выгодная цена
+                                                                <span class="property-profit">(<span>49</span>€)</span>
+                                    </a>
+             
+             
+                                    </span>
+
+        <span class="property-links">
+            
+        </span>
+    </div>
+</div>
+                    <div>
+    <div>
+        
+        
+        <a href="#" class="property-name" onclick="return mf_open_window('https://manyflats.com/click?l=https%3A%2F%2Fss24.io%2Fru%2FnQEjje.html&amp;d=2020-10-13&amp;h=a37249e9b6bfdaf87cc084ed92a5ab8e');" rel="nofollow">
+            Сдам квартиру - 2 комн. - 5 эт. - 69 кв.м.
+                    </a>
+
+        <span class="property-desc">
+            Латвия. Довоенный дом. Все удобства. Хороший ремонт. Квартира мебелирована. 
+                    </span>
+        <span class="mf-searchresult-date" style="font-size: 70%">13.10.2020</span></span>
+        
+        <span class="mf-searchresult-photo">
+            
+            
+                                              Фото:
+                                                        <button  data-id="9"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/c4ba794c4d4c6a8cd02bec558f507b1d.jpg');" rel="nofollow">1</button>
+                                                                            <button  data-id="9"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/25a8cec0f780763b0a69ad4552453acb.jpg');" rel="nofollow">2</button>
+                                                                            <button  data-id="9"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/4c1dc5af2a4d960232a8fe2a148072c4.jpg');" rel="nofollow">3</button>
+                                                                                <a data-id="9" class="mf-ellipsis-9 mf-expand-images"><b>&hellip;</b></a>
+                        <span class="mf-hide-images mf-images-9" style="display:none">
+                                        <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/bf23280c976d73b45a66ad236d25255d.jpg');" rel="nofollow">4</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/e34cf13962ca9aa1b0193a103fff698e.jpg');" rel="nofollow">5</button>
+                                            </span>
+                                                                            <button  data-id="9"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/1c40aa6925db9b3e2cf1940a91782c90.jpg');" rel="nofollow">6</button>
+                                                                            <button  data-id="9"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/fb2cc5a5d0709282f3739687628cee43.jpg');" rel="nofollow">7</button>
+                                                
+            
+             
+                                    </span>
+
+        <span class="property-links">
+            
+        </span>
+    </div>
+</div>
+                    <div>
+    <div>
+        
+        
+        <a href="#" class="property-name" onclick="return mf_open_window('https://manyflats.com/click?l=https%3A%2F%2Fss24.io%2Fru%2Fn2zOOo.html&amp;d=2020-10-13&amp;h=328799fa40e269f5dd4e03e86bc4953e');" rel="nofollow">
+            Сдам квартиру - 2 комн. - 3 эт. - 50 кв.м.
+                            - <span style="color:#ce0e11">
+                    <span>500</span>€/мес.
+                </span>
+                                    </a>
+
+        <span class="property-desc">
+            Латвия. Довоенный дом. Все удобства. Хороший ремонт. Квартира мебелирована. 
+                    </span>
+        <span class="mf-searchresult-date" style="font-size: 70%">13.10.2020</span></span>
+        
+        <span class="mf-searchresult-photo">
+            
+            
+                                              Фото:
+                                                        <button  data-id="10"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/2b76173cc5e39f5f7c7b6253a21024f5.jpg');" rel="nofollow">1</button>
+                                                                            <button  data-id="10"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/aef47782d24f33d79d2ec4d3b4bbde1f.jpg');" rel="nofollow">2</button>
+                                                                            <button  data-id="10"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/f50e26d7e278364cdf4e080b7e1728ed.jpg');" rel="nofollow">3</button>
+                                                                                <a data-id="10" class="mf-ellipsis-10 mf-expand-images"><b>&hellip;</b></a>
+                        <span class="mf-hide-images mf-images-10" style="display:none">
+                                        <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/52a8b00ca5f35e839f076c661c065ef2.jpg');" rel="nofollow">4</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/1cd0576c86463cd3e06eefca94c45103.jpg');" rel="nofollow">5</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/386317be4041e14360a13bbfa39c1df3.jpg');" rel="nofollow">6</button>
+                                                                            <button  class=" mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/3e640210cc5b61f1bca433eb06af1847.jpg');" rel="nofollow">7</button>
+                                            </span>
+                                                                            <button  data-id="10"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/f087c26a730c821fe726444a5bae0529.jpg');" rel="nofollow">8</button>
+                                                                            <button  data-id="10"  class=" mf-expand-images  mf-searchresult-photo-button animated" onclick="return mf_open_window_compact('https://ss24.io/uploads/photos/medium/w900/2020/10/13/01/03/284810300589ea635fa521c89f6e49b6.jpg');" rel="nofollow">9</button>
+                                                
+                             &middot;                 <a href="https://manyflats.com/ru/widget/search/manyflats/lv/profit/e8d20bfb401cf1bd82352f44e62cc2b7" onclick="return mf_open_window('https://manyflats.com/ru/widget/search/manyflats/lv/profit/e8d20bfb401cf1bd82352f44e62cc2b7');" class="property-city" rel="nofollow">
+                                            Анализ цены
+                                                        </a>
+             
+             
+                                    </span>
+
+        <span class="property-links">
+            
+        </span>
+    </div>
+</div>
+            </div>
+    <ul class="pagination">
+                                    <li
+                                        class="active"
+                                    ><a href="https://manyflats.com/ru/widget/search/manyflats/lv?area=m&amp;currency=EUR&amp;f=&amp;p=1" rel="nofollow">1</a></li>
+                                                <li
+                                    ><a href="https://manyflats.com/ru/widget/search/manyflats/lv?area=m&amp;currency=EUR&amp;f=&amp;p=2" rel="nofollow">2</a></li>
+                                                <li
+                                    ><a href="https://manyflats.com/ru/widget/search/manyflats/lv?area=m&amp;currency=EUR&amp;f=&amp;p=3" rel="nofollow">3</a></li>
+                                                <li
+                                    ><a href="https://manyflats.com/ru/widget/search/manyflats/lv?area=m&amp;currency=EUR&amp;f=&amp;p=4" rel="nofollow">4</a></li>
+                                                <li
+                                    ><a href="https://manyflats.com/ru/widget/search/manyflats/lv?area=m&amp;currency=EUR&amp;f=&amp;p=5" rel="nofollow">5</a></li>
+                                                <li
+                                    ><a href="https://manyflats.com/ru/widget/search/manyflats/lv?area=m&amp;currency=EUR&amp;f=&amp;p=6" rel="nofollow">6</a></li>
+                                                <li
+                                    ><a href="https://manyflats.com/ru/widget/search/manyflats/lv?area=m&amp;currency=EUR&amp;f=&amp;p=7" rel="nofollow">7</a></li>
+                                                <li
+                                    ><a href="https://manyflats.com/ru/widget/search/manyflats/lv?area=m&amp;currency=EUR&amp;f=&amp;p=8" rel="nofollow">8</a></li>
+                                                <li
+                                    ><a href="https://manyflats.com/ru/widget/search/manyflats/lv?area=m&amp;currency=EUR&amp;f=&amp;p=9" rel="nofollow">9</a></li>
+                                                <li
+                                    ><a href="https://manyflats.com/ru/widget/search/manyflats/lv?area=m&amp;currency=EUR&amp;f=&amp;p=10" rel="nofollow">10</a></li>
+                        </ul>
+</div>
+
+<div class="js-mf-search-url-geo" style="display:none"></div>
+<div class="search-form-filter-menu js-search-form-filter-menu"></div>
+
+<div class="popup visually-hidden" style="opacity: 0;">
+    <div class="mf-search-popup-close">
+        <span></span>
+    </div>
+    <h2 class="popup__header">Все фильтры</h2>
+    <form action="https://manyflats.com/ru/widget/search/manyflats/lv" method="GET">
+        <input type="hidden" name="currency" value="EUR">
+        <input type="hidden" name="area" value="m">
+
+        <div class="popup-row">
+            <div><span>Сделки</span></div>
+            <select id="status" name="status" class="tostyle">
+                <option value="hide" disabled>Все</option>
+                <option value="clear">Все</option>
+                <option value="buy">Купить</option>
+                <option value="rent">Снять</option>
+                
+            </select>
+        </div>
+
+        <div class="popup-row">
+            <div><span>Объекты</span></div>
+            <select id="object" name="object" class="tostyle">
+                <option value="hide" disabled>Все</option>
+                <option value="clear">Все</option>
+                <option value="flat">Квартиры</option>
+                <option value="house">Дома</option>
+                <option value="land">Земли</option>
+                <option value="office">Офисы</option>
+                <option value="building">Здания</option>
+                <option value="room">Комнаты</option>
+                <option value="garage">Гаражи, парковки</option>
+                <option value="commerce">Коммерческая недвижимость</option>
+                <option value="warehouse">Склады</option>
+                <option value="premise">Помещения</option>
+            </select>
+        </div>
+
+        <div class="popup-row">
+            <div class="totop"><span>Комнат</span></div>
+            <div class="check-box-block with-wrap">
+                <label class="pricebox-label">
+                    <input type="checkbox" class="pricebox" name="studio" value="1" >
+                    Студии
+                </label>
+                <label class="pricebox-label">
+                    <input type="checkbox" class="pricebox" name="room1" value="1" >
+                    1
+                </label>
+                <label class="pricebox-label">
+                    <input type="checkbox" class="pricebox" name="room2" value="1" >
+                    2
+                </label>
+                <label class="pricebox-label">
+                    <input type="checkbox" class="pricebox" name="room3" value="1" >
+                    3
+                </label>
+                <label class="pricebox-label">
+                    <input type="checkbox" class="pricebox" name="room4" value="1" >
+                    4
+                </label>
+                <label class="pricebox-label">
+                    <input type="checkbox" class="pricebox" name="room5" value="1" >
+                    5+
+                </label>
+            </div>
+        </div>
+        <div class="popup-row">
+            <div><span class="totop">Этаж</span></div>
+            <div class="values-block">
+                <div class="input-block">
+                    <label class="search-label dropdown-label">
+                        от
+                        <input name="min_floor" class="number-type filers-input" type="text" pattern="^[0-9\.]*$" placeholder="" value="">
+                    </label>
+
+                    <label class="search-label">
+                        до
+                        <input name="max_floor" class="number-type filers-input" type="text" pattern="^[0-9\.]*$" placeholder="" value="">
+                    </label>
+                </div>
+                <div class="check-box-block">
+                    <label class="pricebox-label">
+                        <input type="checkbox" name="first_floor" class="pricebox heightcorr" value="1">
+                        нижний
+                    </label>
+                    <label class="pricebox-label">
+                        <input type="checkbox" name="middle_floor" class="pricebox heightcorr" value="1">
+                        средний
+                    </label>
+                    <label class="pricebox-label">
+                        <input type="checkbox" name="top_floor" class="pricebox heightcorr" value="1">
+                        верхний этаж
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-row">
+            <div><span>Этажность</span></div>
+            <div class="values-block">
+                <div class="input-block">
+                    <label class="search-label dropdown-label">
+                        от
+                        <input name="min_floors" class="number-type filers-input" type="text" pattern="^[0-9\.]*$" placeholder="" value="">
+                    </label>
+
+                    <label class="search-label">
+                        до
+                        <input name="max_floors" class="number-type filers-input" type="text" pattern="^[0-9\.]*$" placeholder="" value="">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-row">
+            <div><span>Площадь</span></div>
+            <div class="values-block">
+                <div class="input-block">
+                    <label class="search-label dropdown-label">
+                        от
+                        <input name="min_area" class="number-type filers-input" type="text" pattern="^[0-9\.]*$" placeholder="" value="">
+                    </label>
+
+                    <label class="search-label">
+                        до
+                        <input name="max_area" class="number-type filers-input" type="text" pattern="^[0-9\.]*$" placeholder="" value="">
+                        м²
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="popup-row">
+            <div><span>Цена за объект</span></div>
+            <div class="values-block">
+                <div class="input-block">
+                    <label class="search-label dropdown-label">
+                        от
+                        <input name="min_price" class="number-type filers-input" type="text" pattern="^[0-9\.]*$" placeholder="" value="">
+                    </label>
+
+                    <label class="search-label">
+                        до
+                        <input name="max_price" class="number-type filers-input" type="text" pattern="^[0-9\.]*$"
+                               placeholder="" value="">
+                        €
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="popup-row">
+            <div><span>Цена за м²</span>
+            </div>
+            <div class="values-block">
+                <div class="input-block">
+                    <label class="search-label dropdown-label">
+                        от
+                        <input name="min_unit_price" class="number-type filers-input" type="text" pattern="^[0-9\.]*$" placeholder="" value="">
+                    </label>
+
+                    <label class="search-label">
+                        до
+                        <input name="max_unit_price" class="number-type filers-input" type="text" pattern="^[0-9\.]*$" placeholder="" value="">
+                        €
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="popup-row">
+            <div><span>Цена ниже рыночной</span></div>
+            <div class="values-block">
+                <div class="input-block">
+                    <label class="search-label dropdown-label">
+                        от
+                        <input name="min_best_profit" class="number-type filers-input" type="text" pattern="^[0-9\.]*$" placeholder="" value="">
+                    </label>
+
+                    <label class="search-label">
+                        до
+                        <input name="max_best_profit" class="number-type filers-input" type="text" pattern="^[0-9\.]*$" placeholder="" value="">
+                    </label>
+
+                    <div class="short-value">
+                        <select id="best_profit_unit" name="belowType" class="tostyle">
+                            <option value="hide" disabled>€</option>
+                            <option value="money">€</option>
+                            <option value="procentage">%</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup-row">
+            <div><span>Доходность объекта</span></div>
+            <div class="values-block">
+                <div class="input-block">
+                    <label class="search-label dropdown-label">
+                        от
+                        <input name="min_interest" class="number-type filers-input" type="text" pattern="^[0-9\.]*$" placeholder="" value="">
+                    </label>
+
+                    <label class="search-label">
+                        до
+                        <input name="max_interest" class="number-type filers-input" type="text" pattern="^[0-9\.]*$" placeholder="" value="">
+                    </label>
+
+                    <div class="short-value">
+                        <select id="interest_unit" name="belowType" class="tostyle">
+                            <option value="hide" disabled>% в год</option>
+                            <option value="procentage">% в год</option>
+                            <option value="money">€ в месяц</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup-row">
+            <div><span>Окупаемость объекта</span></div>
+            <div class="values-block">
+                <div class="input-block">
+                    <label class="search-label dropdown-label">
+                        от
+                        <input name="min_payback" class="number-type filers-input" type="text" pattern="^[0-9\.]*$" placeholder="" value="">
+                    </label>
+
+                    <label class="search-label">
+                        до
+                        <input name="max_payback" class="number-type filers-input" type="text" pattern="^[0-9\.]*$" placeholder="" value="">
+                        лет
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="popup-row">
+            <div><span>Страна</span></div>
+            <div class="input-block">
+                <select class="country-select" name="Country"></select>
+            </div>
+        </div>
+        <div class="popup-row">
+            <div><span>Регион</span></div>
+            <div class="input-block">
+                <select class="region-select country-select mf-search-popup-disabled-select">
+                </select>
+            </div>
+        </div>
+        <div class="popup-row">
+            <div><span>Город</span></div>
+            <div class="input-block">
+                <select class="sity-select country-select mf-search-popup-disabled-select" name="Region">
+                </select>
+            </div>
+        </div>
+        <div class="popup-row">
+            <div><span>Район</span></div>
+            <div class="input-block">
+                <select class="district-select country-select mf-search-popup-disabled-select" name="District">
+                </select>
+            </div>
+        </div>
+        <div class="popup-row">
+            <div><span>Улица</span></div>
+            <div class="input-block">
+                <select class="street-select country-select mf-search-popup-disabled-select" name="Street">
+                </select>
+            </div>
+        </div>
+        <div class="popup-row">
+            <div><span>Дом</span></div>
+            <div class="input-block">
+                <select class="house-select country-select mf-search-popup-disabled-select" name="House">
+                </select>
+            </div>
+        </div>
+        <div class="popup-row">
+            <div><span>Искать поблизости</span></div>
+            <label class="pricebox-label">
+                <input type="checkbox" id="geo" class="pricebox heightcorr2" value="true">
+                Разрешить геолокацию
+            </label>
+            <input type="text" id="#lafilt" name="la" style="display: none;">
+            <input type="text" id="#lofilt" name="lo" style="display: none;">
+            <select id="nearme" name="searchClose" class="tostyle">
+                <option value="">...</option>
+                <option value="0.5">0.5 км</option>
+                <option value="1">1 км</option>
+                <option value="5">5 км</option>
+                <option value="10">10 км</option>
+                <option value="25">25 км</option>
+            </select>
+        </div>
+        <div class="popup-row">
+            <div><span class="totop">В месте проживания</span></div>
+            <div class="values-block">
+                <div class="input-block">
+                    <span class="tocenter">
+                        Расстояние
+                    </span>
+                    <select id="distance" class="tostyle" name="distance">
+                        <option value="not">...</option>
+                        <option value="0.5">0.5 км</option>
+                        <option value="1">1 км</option>
+                        <option value="5">5 км</option>
+                        <option value="10">10 км</option>
+                        <option value="25">25 км</option>
+                    </select>
+                </div>
+
+                <div class="check-box-block with-wrap">
+                    <label class="pricebox-label">
+                        <input type="checkbox" class="pricebox" name="bus" value="true">
+                        Автобус
+                    </label>
+                    <label class="pricebox-label">
+                        <input type="checkbox" class="pricebox" name="underground" value="true">
+                        Метро
+                    </label>
+                    <label class="pricebox-label">
+                        <input type="checkbox" class="pricebox" name="railway" value="true">
+                        Железнодорожная станция
+                    </label>
+                    <label class="pricebox-label">
+                        <input type="checkbox" class="pricebox" name="park" value="true">
+                        Парк
+                    </label>
+                    <label class="pricebox-label">
+                        <input type="checkbox" class="pricebox" name="water" value="true">
+                        Водоём
+                    </label>
+                    <label class="pricebox-label">
+                        <input type="checkbox" class="pricebox" name="medical" value="true">
+                        Водоём
+                    </label>
+                    <label class="pricebox-label">
+                        <input type="checkbox" class="pricebox" name="university" value="true">
+                        Институт, техникум
+                    </label>
+                    <label class="pricebox-label">
+                        <input type="checkbox" class="pricebox" name="school" value="true">
+                        Школа
+                    </label>
+                    <label class="pricebox-label">
+                        <input type="checkbox" class="pricebox" name="lowschool" value="true">
+                        Детский сад
+                    </label>
+                    <label class="pricebox-label">
+                        <input type="checkbox" class="pricebox" name="market" value="true">
+                        Супермаркет, гипермаркет
+                    </label>
+                    <label class="pricebox-label">
+                        <input type="checkbox" class="pricebox" name="bar" value="true">
+                        Кафе, ресторан
+                    </label>
+                    <label class="pricebox-label">
+                        <input type="checkbox" class="pricebox" name="playground" value="true">
+                        Игровая площадка
+                    </label>
+                </div>
+
+            </div>
+        </div>
+        <div class="popup-row">
+            <div><span class="totop">Серия здания</span></div>
+            <div class="values-block">
+
+                <div class="check-box-block with-wrap">
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="seria1" class="pricebox" value="true">
+                            Дом 103-й серии
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="seria2" class="pricebox" value="true">
+                            Дом 104-й серии
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="seria3" class="pricebox" value="true">
+                            Дом 119-й серии
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="seria4" class="pricebox" value="true">
+                            Дом 467-й серии
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="seria5" class="pricebox" value="true">
+                            Дом 602-й серии
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="seria6" class="pricebox" value="true">
+                            Довоенный дом
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="seria7" class="pricebox" value="true">
+                            Литовский проект дома
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="seria8" class="pricebox" value="true">
+                            Дом для малосемейных
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="seria9" class="pricebox" value="true">
+                            Реновированный дом
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="seria10" class="pricebox" value="true">
+                            Специальный проект дома
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="seria11" class="pricebox" value="true">
+                            Дом сталинской постройки
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="seria12" class="pricebox" value="true">
+                            Дом хрущёвской постройки
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="seria13" class="pricebox" value="true">
+                            Частный дом
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="seria14" class="pricebox" value="true">
+                            Дом чешского проекта
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="seria15" class="pricebox" value="true">
+                            Новостройка
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="seria16" class="pricebox" value="true">
+                            Дом француского проекта
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="seria17" class="pricebox" value="true">
+                            Дом брежневской постройки
+                        </label>
+                                    </div>
+
+            </div>
+        </div>
+        <div class="popup-row">
+            <div><span class="totop">Материал здания</span></div>
+            <div class="values-block">
+
+                <div class="check-box-block with-wrap">
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="material1" class="pricebox" value="true">
+                            Деревянный дом
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="material2" class="pricebox" value="true">
+                            Каменный дом
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="material3" class="pricebox" value="true">
+                            Кирпично-панельный дом
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="material4" class="pricebox" value="true">
+                            Кирпичный дом
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="material5" class="pricebox" value="true">
+                            Панельно-кирпичный дом
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="material6" class="pricebox" value="true">
+                            Панельный дом
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="material7" class="pricebox" value="true">
+                            Монолитный дом
+                        </label>
+                                    </div>
+
+            </div>
+        </div>
+        <div class="popup-row">
+            <div><span class="totop">Удобства</span></div>
+            <div class="values-block">
+
+                <div class="check-box-block with-wrap">
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="amenities1" class="pricebox" value="true">
+                            Без удобств
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="amenities2" class="pricebox" value="true">
+                            Все удобства
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="amenities3" class="pricebox" value="true">
+                            Частичные удобства
+                        </label>
+                                    </div>
+
+            </div>
+        </div>
+        <div class="popup-row">
+            <div><span class="totop">Отопление</span></div>
+            <div class="values-block">
+
+                <div class="check-box-block with-wrap">
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="heating1" class="pricebox" value="true">
+                            Центральное отопление
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="heating2" class="pricebox" value="true">
+                            Газовое отопление
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="heating3" class="pricebox" value="true">
+                            Печное отопление
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="heating4" class="pricebox" value="true">
+                            Камин
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="heating5" class="pricebox" value="true">
+                            Тепловой насос
+                        </label>
+                                            <label class="pricebox-label">
+                            <input type="checkbox" name="heating6" class="pricebox" value="true">
+                            Электрическое отопление
+                        </label>
+                                    </div>
+
+            </div>
+        </div>
+        
+        <div class="popup-row">
+            <div><span>Сортировка</span></div>
+            <div class="values-block">
+                <div class="input-block">
+                    <select id="sort" name="sort" class="tostyle">
+                        <option value="default">по умолчанию</option>
+                        <option value="price_min">по цене (дешёвые в начале)</option>
+                        <option value="price_max">по цене (дорогие в начале)</option>
+                        <option value="date_max">по дате добавления</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="popup-row">
+            <div><span>Максимальный возраст объявления</span></div>
+            <div class="values-block">
+                <div class="input-block">
+                    <select id="term" name="ageAnnoun" class="tostyle">
+                        <option value="hide">месяц</option>
+                        <option value="1">один день</option>
+                        <option value="3">три дня</option>
+                        <option value="7">неделя</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="popup-row">
+            <div>
+            </div>
+            <button class="search-button animated accept-button" type="submit">
+                <span>Поиск</span>
+            </button>
+            <button class="search-button animated cancel-button" type="button">
+                <span>Отмена</span>
+            </button>
+        </div>
+    </form>
+</div>
+<div class="lang-block2-close"></div>
+<script src="../../../../js/search.js"></script>
+<script src="../../../../js/click.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171779387-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-171779387-1');
+</script>
+
+</body>
+</html>

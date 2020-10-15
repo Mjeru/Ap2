@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ManyFlats - поиск выгодной недвижимости на всех сайтах мира</title>
+		<meta
+			name="description"
+			content="Поисковая система выгодной недвижимости, бесплатный анализ стоимости объектов недвижимости"
+		/>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+		/>
+		<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+		<link
+			rel="apple-touch-icon"
+			sizes="57x57"
+			href="/images/favicon/apple-icon-57x57.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="60x60"
+			href="/images/favicon/apple-icon-60x60.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="72x72"
+			href="/images/favicon/apple-icon-72x72.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="76x76"
+			href="/images/favicon/apple-icon-76x76.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="114x114"
+			href="/images/favicon/apple-icon-114x114.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="120x120"
+			href="/images/favicon/apple-icon-120x120.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="144x144"
+			href="/images/favicon/apple-icon-144x144.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="152x152"
+			href="/images/favicon/apple-icon-152x152.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/images/favicon/apple-icon-180x180.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="192x192"
+			href="/images/favicon/android-icon-192x192.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/images/favicon/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="96x96"
+			href="/images/favicon/favicon-96x96.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/images/favicon/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="/images/favicon/manifest.json" />
+		<meta name="msapplication-TileColor" content="#ffffff" />
+		<meta
+			name="msapplication-TileImage"
+			content="/images/favicon/ms-icon-144x144.png"
+		/>
+		<meta name="theme-color" content="#ffffff" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Roboto:100,300&subset=latin,cyrillic"
+			rel="stylesheet"
+			type="text/css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+			type="text/css"
+		/>
+		<link rel="stylesheet" type="text/css" href="../../css/page.css" />
+		<link
+			rel="alternate"
+			hreflang="x-default"
+			href="https://manyflats.com/ru/search/lv"
+		/>
+		<link
+			rel="alternate"
+			hreflang="en"
+			href="https://manyflats.com/en/search/lv"
+		/>
+		<link
+			rel="alternate"
+			hreflang="es"
+			href="https://manyflats.com/es/search/lv"
+		/>
+		<link
+			rel="alternate"
+			hreflang="ru"
+			href="https://manyflats.com/ru/search/lv"
+		/>
+		<link
+			rel="alternate"
+			hreflang="lv"
+			href="https://manyflats.com/lv/search/lv"
+		/>
+	</head>
+	<body>
+		<a rel="nofollow" class="page-lang-menu js-page-lang-menu">
+			<span>€</span>
+			<span>м²</span>
+			<div class="flag-icon ru"></div>
+			<span>RU</span>
+		</a>
+		<div class="page-lang-block page-lang-lclosed">
+			<form action="https://manyflats.com/language">
+				<div class="page-lang-options">
+					<ul>
+						<li>
+							<label class="page-lang-container">
+								<input
+									type="radio"
+									name="lang"
+									class="page-lang-radio"
+									value="en"
+								/>
+								<div class="page-lang-label">
+									<div class="flag-icon en"></div>
+									<span class="text">EN</span>
+								</div>
+							</label>
+						</li>
+						<li>
+							<label class="page-lang-container">
+								<input
+									type="radio"
+									name="lang"
+									class="page-lang-radio"
+									value="es"
+								/>
+								<div class="page-lang-label">
+									<div class="flag-icon es"></div>
+									<span class="text">ES</span>
+								</div>
+							</label>
+						</li>
+						<li>
+							<label class="page-lang-container">
+								<input
+									type="radio"
+									name="lang"
+									class="page-lang-radio"
+									value="ru"
+									checked
+								/>
+								<div class="page-lang-label">
+									<div class="flag-icon ru"></div>
+									<span class="text">RU</span>
+								</div>
+							</label>
+						</li>
+						<li>
+							<label class="page-lang-container">
+								<input
+									type="radio"
+									name="lang"
+									class="page-lang-radio"
+									value="lv"
+								/>
+								<div class="page-lang-label">
+									<div class="flag-icon lv"></div>
+									<span class="text">LV</span>
+								</div>
+							</label>
+						</li>
+					</ul>
+
+					<div class="page-lang-select-block">
+						<select name="currency" class="js-page-lang-select">
+							<option value="EUR" selected>EUR</option>
+							<option value="USD">USD</option>
+							<option value="GBP">GBP</option>
+							<option value="RUB">RUB</option>
+							<option value="JPY">JPY</option>
+							<option value="CNY">CNY</option>
+							<option value="CHF">CHF</option>
+							<option value="AUD">AUD</option>
+							<option value="BGN">BGN</option>
+							<option value="BYR">BYR</option>
+							<option value="CAD">CAD</option>
+							<option value="CZK">CZK</option>
+							<option value="DKK">DKK</option>
+							<option value="HRK">HRK</option>
+							<option value="HUF">HUF</option>
+							<option value="INR">INR</option>
+							<option value="KZT">KZT</option>
+							<option value="MDL">MDL</option>
+							<option value="NOK">NOK</option>
+							<option value="NZD">NZD</option>
+							<option value="PLN">PLN</option>
+							<option value="RON">RON</option>
+							<option value="RSD">RSD</option>
+							<option value="SEK">SEK</option>
+							<option value="TRY">TRY</option>
+							<option value="UAH">UAH</option>
+						</select>
+						<select name="area" class="js-page-lang-select2">
+							<option value="m" selected>m²</option>
+							<option value="ft">ft²</option>
+						</select>
+						<button
+							type="submit"
+							class="page-lang-button page-lang-accept-button"
+						>
+							Применить
+						</button>
+						<div
+							class="page-lang-close-icon page-lang-close-button js-page-lang-close-button"
+						>
+							<span></span>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<div class="page-lang-block-close"></div>
+		<div class="lang-block-close"></div>
+		<div class="lang-block2-close"></div>
+		<nav class="nav-mobile" style="display: none">
+			<ul>
+				<li class="sub">
+					<div>Страны</div>
+					<ul class="subsub" style="display: none">
+						<li>
+							<a
+								href="https://manyflats.com/ru/search/lv?f=%D0%9B%D0%B0%D1%82%D0%B2%D0%B8%D1%8F&currency=EUR&area=m"
+								>Латвия</a
+							>
+						</li>
+						<li>
+							<a
+								href="https://manyflats.com/ru/search/es?f=%D0%98%D1%81%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F&currency=EUR&area=m"
+								>Испания</a
+							>
+						</li>
+						<li>
+							<a
+								href="https://manyflats.com/ru/search/de?f=%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D1%8F&currency=EUR&area=m"
+								>Германия</a
+							>
+						</li>
+						<li>
+							<a
+								href="https://manyflats.com/ru/search/ad?f=%D0%90%D0%BD%D0%B4%D0%BE%D1%80%D1%80%D0%B0&currency=EUR&area=m"
+								>Андорра</a
+							>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+
+		<header class="header">
+			<div class="container">
+				<div class="mobile-container">
+					<div class="mobile-logo">
+						<div class="logo">
+							<a href="https://manyflats.com/ru/home">
+								<img class="logo__item" src="/images/logo.png" alt="" />
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="logo">
+					<a href="https://manyflats.com/ru/home">
+						<img class="logo__item" src="/images/logo.png" alt="" />
+					</a>
+				</div>
+				<div class="burger-side">
+					<div class="burger-container">
+						<div class="burger"><span></span></div>
+					</div>
+				</div>
+				<nav class="nav">
+					<ul class="nav__list">
+						<li class="nav__item js-page-menu-submenu-parent">
+							<a
+								href="https://manyflats.com/ru/home?lang=ru&currency=EUR&area=m"
+								>Страны</a
+							>
+							<ul class="sub__menu hidden">
+								<li class="js-page-menu-submenu-parent">
+									<a
+										href="https://manyflats.com/ru/search/lv?currency=EUR&area=m"
+										>Латвия</a
+									>
+								</li>
+								<li class="js-page-menu-submenu-parent">
+									<a
+										href="https://manyflats.com/ru/search/es?currency=EUR&area=m"
+										>Испания</a
+									>
+								</li>
+								<li class="js-page-menu-submenu-parent">
+									<a
+										href="https://manyflats.com/ru/search/de?currency=EUR&area=m"
+										>Германия</a
+									>
+								</li>
+								<li class="js-page-menu-submenu-parent">
+									<a
+										href="https://manyflats.com/ru/search/ad?currency=EUR&area=m"
+										>Андорра</a
+									>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<div class="mf-country-links">
+			<b
+				><a href="https://manyflats.com/ru/search/lv?currency=EUR&area=m"
+					>Латвия</a
+				></b
+			>
+			(4690),
+			<a href="https://manyflats.com/ru/search/es?currency=EUR&area=m"
+				>Испания</a
+			>
+			(61575),
+			<a href="https://manyflats.com/ru/search/de?currency=EUR&area=m"
+				>Германия</a
+			>
+			(54024),
+			<a href="https://manyflats.com/ru/search/ad?currency=EUR&area=m"
+				>Андорра</a
+			>
+			(184), Всего (120473), Архив (120473)
+		</div>
+		<iframe
+			src="/ru/widget/search/manyflats/lv?f=&currency=EUR&area=m"
+			width="100%"
+			height="3500"
+			allowtransparency="true"
+			frameborder="0"
+			scrolling="no"
+		></iframe>
+
+		<div class="footer">
+			<a href="https://manyflats.com/ru/terms">Условия</a>
+			<a href="https://manyflats.com/ru/policy">Конфиденциальность</a>
+		</div>
+
+		<script src="../../js/page.js"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=UA-171779387-1"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "UA-171779387-1");
+		</script>
+
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript">
+			(function (m, e, t, r, i, k, a) {
+				m[i] =
+					m[i] ||
+					function () {
+						(m[i].a = m[i].a || []).push(arguments);
+					};
+				m[i].l = 1 * new Date();
+				(k = e.createElement(t)),
+					(a = e.getElementsByTagName(t)[0]),
+					(k.async = 1),
+					(k.src = r),
+					a.parentNode.insertBefore(k, a);
+			})(
+				window,
+				document,
+				"script",
+				"https://mc.yandex.ru/metrika/tag.js",
+				"ym"
+			);
+
+			ym(62179063, "init", {
+				clickmap: true,
+				trackLinks: true,
+				accurateTrackBounce: true,
+				webvisor: true,
+			});
+		</script>
+		<noscript
+			><div>
+				<img
+					src="https://mc.yandex.ru/watch/62179063"
+					style="position: absolute; left: -9999px"
+					alt=""
+				/></div
+		></noscript>
+		<!-- /Yandex.Metrika counter -->
+	</body>
+</html>
