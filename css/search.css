@@ -159,26 +159,6 @@ ul {
 .search-field:focus::placeholder {
 	color: rgb(70, 70, 70);
 }
-.search-field:after {
-	position: absolute;
-	content: "";
-	height: 1px;
-	right: 0;
-	background-color: rgb(70, 70, 70);
-	top: 50%;
-	transform: translateY(-50%);
-	width: 20px;
-}
-.search-field:before {
-	position: absolute;
-	content: "";
-	height: 1px;
-	right: 0;
-	top: 50%;
-	background-color: rgb(70, 70, 70);
-	transform: translateY(-50%);
-	width: 20px;
-}
 .search-form > span {
 	/* display: table-cell; */
 	vertical-align: middle;
