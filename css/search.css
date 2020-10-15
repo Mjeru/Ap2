@@ -145,11 +145,11 @@ ul {
 	padding: 0 1.2rem 0 1.2rem;
 	vertical-align: middle;
 	color: #464646;
-	border-width: 2px 0 2px 2px;
+	border-width: 2px 2px 2px 2px;
 	border-style: solid;
 	border-color: #e0e2e7;
 	border-radius: 8px 0 0 8px;
-	outline: 0;
+	outline: none;
 	background-color: #fff;
 	padding-right: 31px;
 	position: relative;
@@ -176,7 +176,7 @@ ul {
 	color: #fff;
 	border-width: 0;
 	border-radius: 0 8px 8px 0;
-	outline: 0;
+	outline: none;
 	background-color: #38a100;
 	box-sizing: border-box;
 }
