@@ -1580,7 +1580,7 @@ input:focus:-ms-input-placeholder {
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background-color: rgba(0, 0, 0, 0.07);
+	background-color: transparent;
 }
 
 .popup__input {
