@@ -11490,9 +11490,16 @@ $(document).ready(function () {
     [].forEach.call(document.querySelectorAll(".whith-clear"), function (element) {
       element.oninput = function (e) {
         if (e.target.value !== "") {
-          e.target.parentNode.querySelector(".mf-search-clear-input").style = "opacity: 1;";
+		  e.target.parentNode.querySelector(".mf-search-clear-input").style = "opacity: 1;";
+		  if (e.target.parentNode.querySelector(".searcharea")) {
+			e.target.parentNode.querySelector(".searcharea").span.innerHTML =
+				"Искать рядом со мной";
+		}
         } else {
-          e.target.parentNode.querySelector(".mf-search-clear-input").style = "opacity: 0.5;";
+		  e.target.parentNode.querySelector(".mf-search-clear-input").style = "opacity: 0.5;";
+		  if (e.target.parentNode.querySelector(".searcharea")) {
+			e.target.parentNode.querySelector(".searcharea").span.innerHTML =
+				"Искать рядом в округе";
         }
       };
     });
