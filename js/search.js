@@ -12569,18 +12569,20 @@
 												".mf-search-clear-input"
 											).style = "opacity: 1;";
 											if (e.target.parentNode.querySelector(".searcharea")) {
-												e.target.parentNode.querySelector(
-													".searcharea"
-												).label.span.innerHTML = "Искать рядом со мной";
+												e.target.parentNode
+													.querySelector(".searcharea")
+													.querySelector("SPAN").innerHTML =
+													"Искать рядом со мной";
 											}
 										} else {
 											e.target.parentNode.querySelector(
 												".mf-search-clear-input"
 											).style = "opacity: 0.5;";
 											if (e.target.parentNode.querySelector(".searcharea")) {
-												e.target.parentNode.querySelector(
-													".searcharea"
-												).label.span.innerHTML = "Искать рядом в округе";
+												e.target.parentNode
+													.querySelector(".searcharea")
+													.querySelector("SPAN").innerHTML =
+													"Искать рядом в округе";
 											}
 										}
 									};
