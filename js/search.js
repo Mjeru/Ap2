@@ -11753,21 +11753,23 @@
 							"left=40,top=40,width=600,height=400,menubar=no,location=no,status=no,titlebar=no";
 					}
 
-					var photoFrame = window.open(url, "_blank", params);
+					window.open(url, "_blank", params);
 					return false;
 				}
 
 				function goBack() {
 					window.history.back();
 				}
-				[].forEach.call(document.querySelectorAll(".slideshow"), function (element) {
+				[].forEach.call(document.querySelectorAll(".slideshow"), function (
+					element
+				) {
 					element.onclick = (event) => {
 						parent = event.target.parentNode;
-						buttons = [];
+						links = [];
 						[].forEach.call(
-							parent.querySelectorAll(".mf-searchresult-photo-button"),
+							parent.querySelectorAll(".httpLinks"),
 							(element) => {
-								buttons.push(element);
+								links.push(element.innerHTML);
 							}
 						);
 						let i = 0;
@@ -11778,12 +11780,10 @@
 						// 	}
 						// }
 						let interval = setInterval(function () {
-							if (i > buttons.length) {
+							if (i > link.length) {
 								clearInterval(interval);
 							}
-							if (photoFrame){
-								photoFrame.window.close();
-							}
+							let photoFrame = window.open(`"${links[i]}"`);
 							buttons[i].click();
 							i++;
 						}, 1500);
