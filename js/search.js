@@ -11779,8 +11779,9 @@
 						// 		i++;
 						// 	}
 						// }
+						d
 						let interval = setInterval(function () {
-							if (i > link.length) {
+							if (i > links.length) {
 								clearInterval(interval);
 							}
 							let photoFrame = window.open(`"${links[i]}"`);
