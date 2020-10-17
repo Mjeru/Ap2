@@ -11772,8 +11772,7 @@
 						let i = 0;
 						let photoFrame;
 						let interval = setInterval(function () {
-							debugger;
-							if (i > links.length) {
+							if (i >= links.length) {
 								clearInterval(interval);
 							}
 							if (photoFrame !== undefined) {
