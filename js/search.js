@@ -11770,6 +11770,7 @@
 							links.push(element.innerHTML);
 						});
 						let i = 0;
+						let photoFrame;
 						let interval = setInterval(function () {
 							debugger;
 							if (i > links.length) {
@@ -11778,7 +11779,7 @@
 							if (photoFrame !== undefined) {
 								photoFrame = window.close();
 							}
-							let photoFrame = window.open(
+							photoFrame = window.open(
 								links[i],
 								"_blank",
 								"left=40,top=40,width=600,height=400,menubar=no,location=no,status=no,titlebar=no"
