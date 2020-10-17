@@ -11770,7 +11770,7 @@
 							links.push(element.innerHTML);
 						});
 						let i = 0;
-						let photoFrame;
+						let photoFrame = "true";
 						debugger;
 						let interval = setInterval(function () {
 							if (i >= links.length - 1) {
