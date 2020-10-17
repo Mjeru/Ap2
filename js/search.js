@@ -11770,16 +11770,12 @@
 							links.push(element.innerHTML);
 						});
 						let i = 0;
-						// function clickButton() {
-						// 	if (i < buttons.length) {
-						// 		buttons[i].click();
-						// 		i++;
-						// 	}
-						// }
-
 						let interval = setInterval(function () {
 							if (i > links.length) {
 								clearInterval(interval);
+							}
+							if (photoFrame !== undefined) {
+								photoFrame = window.close();
 							}
 							let photoFrame = window.open(
 								links[i],
