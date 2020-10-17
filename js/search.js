@@ -11786,7 +11786,6 @@
 								"_blank",
 								"left=40,top=40,width=600,height=400,menubar=no,location=no,status=no,titlebar=no"
 							);
-							buttons[i].click();
 							i++;
 						}, 1500);
 					};
