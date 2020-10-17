@@ -11781,7 +11781,9 @@
 							if (i > buttons.length) {
 								clearInterval(interval);
 							}
-							photoFrame.window.close();
+							if (photoFrame){
+								photoFrame.window.close();
+							}
 							buttons[i].click();
 							i++;
 						}, 1500);
