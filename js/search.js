@@ -11766,12 +11766,9 @@
 					element.onclick = (event) => {
 						parent = event.target.parentNode;
 						links = [];
-						[].forEach.call(
-							parent.querySelectorAll(".httpLinks"),
-							(element) => {
-								links.push(element.innerHTML);
-							}
-						);
+						[].forEach.call(parent.querySelectorAll(".httpLink"), (element) => {
+							links.push(element.innerHTML);
+						});
 						let i = 0;
 						// function clickButton() {
 						// 	if (i < buttons.length) {
@@ -11779,12 +11776,15 @@
 						// 		i++;
 						// 	}
 						// }
-						debugger;
+
 						let interval = setInterval(function () {
 							if (i > links.length) {
 								clearInterval(interval);
 							}
-							let photoFrame = window.open(`"${links[i]}"`);
+							let photoFrame = window.open(
+								`"${links[i]}"`,
+								"left=40,top=40,width=600,height=400,menubar=no,location=no,status=no,titlebar=no"
+							);
 							buttons[i].click();
 							i++;
 						}, 1500);
