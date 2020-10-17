@@ -11775,6 +11775,9 @@
 							if (i >= links.length - 1) {
 								clearInterval(interval);
 							}
+							if (photoFrame === undefined) {
+								clearInterval(interval);
+							}
 							if (photoFrame !== undefined) {
 								photoFrame.window.close();
 							}
