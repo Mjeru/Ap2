@@ -11772,7 +11772,7 @@
 						let i = 0;
 						let photoFrame;
 						let interval = setInterval(function () {
-							if (i >= links.length) {
+							if (i >= links.length - 1) {
 								clearInterval(interval);
 							}
 							if (photoFrame !== undefined) {
