@@ -105,7 +105,7 @@ ul {
 	height: 35px;
 	width: 35px;
 	top: 50%;
-	background-image: url(../images/35.gif);
+	background-image: url(/images/35.gif);
 	background-size: contain;
 	background-repeat: no-repeat;
 	opacity: 0;
@@ -835,7 +835,7 @@ input:focus:-ms-input-placeholder {
 	left: 10px;
 	top: 50%;
 	transform: translateY(-50%);
-	background-image: url(../images/control_point-24px.svg);
+	background-image: url(/images/control_point-24px.svg);
 	background-repeat: no-repeat;
 	background-size: contain;
 	opacity: 0.7;
@@ -1382,7 +1382,7 @@ input:focus:-ms-input-placeholder {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	background-color: #ffffff;
-	background-image: url(../images/check_box_outline_blank-24px.svg);
+	background-image: url(/images/check_box_outline_blank-24px.svg);
 	/* fill: #38a100; */
 	border-radius: 5px;
 	z-index: 1;
@@ -1474,7 +1474,7 @@ input:focus:-ms-input-placeholder {
 }
 .search-form-best-checkbox:checked::before {
 	content: "";
-	background-image: url(../images/icons8-checkmark.svg);
+	background-image: url(/images/icons8-checkmark.svg);
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-color: transparent;
@@ -1814,7 +1814,7 @@ input:focus:-ms-input-placeholder {
 	/* right: 0; */
 	/* bottom: 0; */
 	/* transform: translate(15%, 50%); */
-	background-image: url(../images/check_box_outline_blank-24px.svg);
+	background-image: url(/images/check_box_outline_blank-24px.svg);
 	/* fill: #38a100; */
 	border-radius: 5px;
 	background-color: #ffffff;
@@ -1822,7 +1822,7 @@ input:focus:-ms-input-placeholder {
 }
 .popup .pricebox:checked::before {
 	/* transform: translate(-50%, -50%); */
-	background-image: url(../images/check_box-24px.svg);
+	background-image: url(/images/check_box-24px.svg);
 	border-radius: 5px;
 	background-color: #ffffff;
 	z-index: -1;
@@ -2688,6 +2688,9 @@ input:focus:-ms-input-placeholder {
 }
 .disp {
 	display: block;
+}
+.slideshow {
+	width: auto;
 }
 @media (min-width: 320px) {
 	.owl-slider {

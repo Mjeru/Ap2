@@ -11753,13 +11753,40 @@
 							"left=40,top=40,width=600,height=400,menubar=no,location=no,status=no,titlebar=no";
 					}
 
-					window.open(url, "_blank", params);
+					var photoFrame = window.open(url, "_blank", params);
 					return false;
 				}
 
 				function goBack() {
 					window.history.back();
 				}
+				[].forEach.call(document.querySelectorAll(".slideshow"), function (element) {
+					element.onclick = () => {
+						parent = this.parentNode;
+						buttons = [];
+						[].forEach.call(
+							parent.querySelectorAll(".mf-searchresult-photo-button"),
+							(element) => {
+								buttons.push(element);
+							}
+						);
+						let i = 0;
+						// function clickButton() {
+						// 	if (i < buttons.length) {
+						// 		buttons[i].click();
+						// 		i++;
+						// 	}
+						// }
+						let interval = setInterval(function () {
+							if (i > buttons.length) {
+								clearInterval(interval);
+							}
+							photoFrame.window.close();
+							buttons[i].click();
+							i++;
+						}, 1500);
+					};
+				});
 
 				/***/
 			},
@@ -12572,7 +12599,7 @@
 												e.target.parentNode
 													.querySelector(".searcharea")
 													.querySelector("SPAN").innerHTML =
-													"Искать рядом со мной";
+													"Искать рядом с указанным адресом";
 											}
 										} else {
 											e.target.parentNode.querySelector(
@@ -12582,7 +12609,7 @@
 												e.target.parentNode
 													.querySelector(".searcharea")
 													.querySelector("SPAN").innerHTML =
-													"Искать рядом в округе";
+													"Искать рядом со мной";
 											}
 										}
 									};
