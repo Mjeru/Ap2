@@ -11769,8 +11769,12 @@
 						[].forEach.call(parent.querySelectorAll(".httpLink"), (element) => {
 							links.push(element.innerHTML);
 						});
-						let i = 0;
-						let photoFrame = "true";
+						let i = 1;
+						let photoFrame = window.open(
+							links[0],
+							"_blank",
+							"left=40,top=40,width=600,height=400,menubar=no,location=no,status=no,titlebar=no"
+						);
 						debugger;
 						let interval = setInterval(function () {
 							if (i >= links.length - 1) {
@@ -11779,7 +11783,7 @@
 							if (photoFrame === undefined) {
 								clearInterval(interval);
 							}
-							if (photoFrame !== undefined && photoFrame !== "true") {
+							if (photoFrame !== undefined) {
 								photoFrame.window.close();
 							}
 							photoFrame = window.open(
