@@ -11761,8 +11761,8 @@
 					window.history.back();
 				}
 				[].forEach.call(document.querySelectorAll(".slideshow"), function (element) {
-					element.onclick = () => {
-						parent = this.parentNode;
+					element.onclick = (event) => {
+						parent = event.target.parentNode;
 						buttons = [];
 						[].forEach.call(
 							parent.querySelectorAll(".mf-searchresult-photo-button"),
