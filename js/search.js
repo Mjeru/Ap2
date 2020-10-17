@@ -11777,7 +11777,7 @@
 								clearInterval(interval);
 							}
 							if (photoFrame !== undefined) {
-								photoFrame = window.close();
+								photoFrame.window.close();
 							}
 							photoFrame = window.open(
 								links[i],
