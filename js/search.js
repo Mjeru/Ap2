@@ -11778,9 +11778,11 @@
 						let interval = setInterval(function () {
 							if (i >= links.length - 1) {
 								clearInterval(interval);
+								return;
 							}
-							if (photoFrame.window == null){
+							if (photoFrame.window == null) {
 								clearInterval(interval);
+								return;
 							}
 							if (photoFrame.window !== null) {
 								photoFrame.window.close();
