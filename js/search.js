@@ -11776,7 +11776,7 @@
 							"left=40,top=40,width=600,height=400,menubar=no,location=no,status=no,titlebar=no"
 						);
 						let interval = setInterval(function () {
-							if (i >= links.length - 1) {
+							if (i >= links.length) {
 								clearInterval(interval);
 								if (photoFrame.window !== null) {
 									photoFrame.window.close();
