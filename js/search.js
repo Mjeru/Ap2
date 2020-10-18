@@ -11779,10 +11779,10 @@
 							if (i >= links.length - 1) {
 								clearInterval(interval);
 							}
-							if (photoFrame === undefined) {
+							if (photoFrame.window.close() == null){
 								clearInterval(interval);
 							}
-							if (photoFrame !== undefined) {
+							if (photoFrame.window.close() !== null) {
 								photoFrame.window.close();
 							}
 							photoFrame = window.open(
