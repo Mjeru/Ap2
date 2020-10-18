@@ -12801,6 +12801,9 @@
 										url: "".concat(urlGeo, "?type=country"),
 										context: document.body,
 										success: function success(html) {
+											if (html.list == undefined) {
+												return;
+											}
 											html.list.forEach(function (element) {
 												var newLi = document.createElement("option");
 												newLi.value = "".concat(element);
