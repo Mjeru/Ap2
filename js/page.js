@@ -11811,9 +11811,6 @@
 							}
 
 							document.querySelector(".droped").click();
-							document
-								.querySelector(".page-lang-block-close")
-								.classList.toggle("disp");
 						};
 
 						$(".js-page-lang-select").each(function (index) {
