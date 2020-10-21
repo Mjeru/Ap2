@@ -6,6 +6,9 @@ html {
 * {
 	box-sizing: border-box;
 }
+iframe {
+	-webkit-overflow-scrolling: touch;
+}
 body {
 	position: relative;
 	min-height: 100%;
