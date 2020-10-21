@@ -99,7 +99,11 @@
 			rel="stylesheet"
 			type="text/css"
 		/>
-		<link rel="stylesheet" type="text/css" href="../../css/page.css" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="/css/page.css?id=91e7eb939cb744249429"
+		/>
 		<link
 			rel="alternate"
 			hreflang="x-default"
@@ -119,6 +123,16 @@
 			rel="alternate"
 			hreflang="ru"
 			href="https://manyflats.com/ru/search/lv"
+		/>
+		<link
+			rel="alternate"
+			hreflang="de"
+			href="https://manyflats.com/de/search/lv"
+		/>
+		<link
+			rel="alternate"
+			hreflang="it"
+			href="https://manyflats.com/it/search/lv"
 		/>
 		<link
 			rel="alternate"
@@ -177,6 +191,34 @@
 								<div class="page-lang-label">
 									<div class="flag-icon ru"></div>
 									<span class="text">RU</span>
+								</div>
+							</label>
+						</li>
+						<li>
+							<label class="page-lang-container">
+								<input
+									type="radio"
+									name="lang"
+									class="page-lang-radio"
+									value="de"
+								/>
+								<div class="page-lang-label">
+									<div class="flag-icon de"></div>
+									<span class="text">DE</span>
+								</div>
+							</label>
+						</li>
+						<li>
+							<label class="page-lang-container">
+								<input
+									type="radio"
+									name="lang"
+									class="page-lang-radio"
+									value="it"
+								/>
+								<div class="page-lang-label">
+									<div class="flag-icon it"></div>
+									<span class="text">IT</span>
 								</div>
 							</label>
 						</li>
@@ -246,19 +288,11 @@
 		</div>
 
 		<div class="page-lang-block-close"></div>
-		<div class="lang-block-close"></div>
-		<div class="lang-block2-close"></div>
 		<nav class="nav-mobile" style="display: none">
 			<ul>
 				<li class="sub">
 					<div>Страны</div>
 					<ul class="subsub" style="display: none">
-						<li>
-							<a
-								href="https://manyflats.com/ru/search/lv?f=%D0%9B%D0%B0%D1%82%D0%B2%D0%B8%D1%8F&currency=EUR&area=m"
-								>Латвия</a
-							>
-						</li>
 						<li>
 							<a
 								href="https://manyflats.com/ru/search/es?f=%D0%98%D1%81%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F&currency=EUR&area=m"
@@ -269,6 +303,12 @@
 							<a
 								href="https://manyflats.com/ru/search/de?f=%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D1%8F&currency=EUR&area=m"
 								>Германия</a
+							>
+						</li>
+						<li>
+							<a
+								href="https://manyflats.com/ru/search/lv?f=%D0%9B%D0%B0%D1%82%D0%B2%D0%B8%D1%8F&currency=EUR&area=m"
+								>Латвия</a
 							>
 						</li>
 						<li>
@@ -313,12 +353,6 @@
 							<ul class="sub__menu hidden">
 								<li class="js-page-menu-submenu-parent">
 									<a
-										href="https://manyflats.com/ru/search/lv?currency=EUR&area=m"
-										>Латвия</a
-									>
-								</li>
-								<li class="js-page-menu-submenu-parent">
-									<a
 										href="https://manyflats.com/ru/search/es?currency=EUR&area=m"
 										>Испания</a
 									>
@@ -327,6 +361,12 @@
 									<a
 										href="https://manyflats.com/ru/search/de?currency=EUR&area=m"
 										>Германия</a
+									>
+								</li>
+								<li class="js-page-menu-submenu-parent">
+									<a
+										href="https://manyflats.com/ru/search/lv?currency=EUR&area=m"
+										>Латвия</a
 									>
 								</li>
 								<li class="js-page-menu-submenu-parent">
@@ -343,40 +383,52 @@
 		</header>
 
 		<div class="mf-country-links">
+			<a href="https://manyflats.com/ru/search/es?currency=EUR&area=m"
+				>Испания</a
+			>
+			(99477),
+			<a href="https://manyflats.com/ru/search/de?currency=EUR&area=m"
+				>Германия</a
+			>
+			(73711),
 			<b
 				><a href="https://manyflats.com/ru/search/lv?currency=EUR&area=m"
 					>Латвия</a
 				></b
 			>
-			(4690),
-			<a href="https://manyflats.com/ru/search/es?currency=EUR&area=m"
-				>Испания</a
-			>
-			(61575),
-			<a href="https://manyflats.com/ru/search/de?currency=EUR&area=m"
-				>Германия</a
-			>
-			(54024),
+			(7615),
 			<a href="https://manyflats.com/ru/search/ad?currency=EUR&area=m"
 				>Андорра</a
 			>
-			(184), Всего (120473), Архив (120473)
+			(375), Всего (181178)
 		</div>
-		<iframe
-			src="https://mjeru.github.io/Ap2/ru/widget/search/manyflats/lv@f=&currency=EUR&area=m.html"
-			width="100%"
-			height="3500"
-			allowtransparency="true"
-			frameborder="0"
-			scrolling="no"
-		></iframe>
+		<div
+			style="
+				overflow: auto !important;
+				-webkit-overflow-scrolling: touch !important;
+			"
+		>
+			<iframe
+				src="/ru/widget/search/manyflats/lv?f=&currency=EUR&area=m"
+				width="100%"
+				height="3500"
+				allowtransparency="true"
+				frameborder="0"
+				scrolling="no"
+			></iframe>
+		</div>
+		<div class="mf-term">
+			Настоящий сайт и представленные на нем материалы носят исключительно
+			информационный характер и ни при каких условиях не являются публичной
+			офертой.
+		</div>
 
 		<div class="footer">
 			<a href="https://manyflats.com/ru/terms">Условия</a>
 			<a href="https://manyflats.com/ru/policy">Конфиденциальность</a>
 		</div>
 
-		<script src="../../js/page.js"></script>
+		<script src="/js/page.js?id=335f5a3799ab4a2bca93"></script>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script
 			async

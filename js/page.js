@@ -11809,8 +11809,9 @@
 							) {
 								document.querySelector(".js-page-lang-close-button").click();
 							}
-
-							document.querySelector(".droped").click();
+							if (document.querySelector(".droped") != undefined) {
+								document.querySelector(".droped").click();
+							}
 						};
 
 						$(".js-page-lang-select").each(function (index) {
