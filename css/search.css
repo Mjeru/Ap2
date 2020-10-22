@@ -1823,6 +1823,10 @@ html {
 	.popup-row > div:first-child span {
 		font-size: 16px;
 	}
+	.popup-row {
+		flex-direction: column;
+		align-items: center;
+	}
 	.values-block {
 		align-items: center;
 	}
