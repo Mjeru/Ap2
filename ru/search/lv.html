@@ -398,8 +398,9 @@
 			>
 			(375), Всего (181178)
 		</div>
-		<div style="overflow-y: hidden; height: 2500px">
+		<div style="overflow-y: hidden; height: auto">
 			<iframe
+				class="frame"
 				seamless
 				src="https://mjeru.github.io/Ap2/ru/widget/search/manyflats/lv@f=&currency=EUR&area=m"
 				height="2500"
@@ -408,6 +409,23 @@
 				style="height: 100%; width: 100%; border: none; display: block"
 			></iframe>
 		</div>
+		<script>
+			$(function () {
+				$(".frame").load(function () {
+					var target = this;
+					var content = $(target).contents().find("body");
+					$(target).height($(content).outerHeight(true));
+
+					$(content).on("DOMSubtreeModified click", function (event) {
+						setTimeout(function () {
+							$(target)
+								.stop()
+								.animate({ height: $(content).outerHeight(true) }, 200);
+						}, 400);
+					});
+				});
+			});
+		</script>
 		<div class="mf-term">
 			Настоящий сайт и представленные на нем материалы носят исключительно
 			информационный характер и ни при каких условиях не являются публичной
