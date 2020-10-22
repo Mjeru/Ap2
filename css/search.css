@@ -1820,6 +1820,24 @@ html {
 	}
 }
 @media (max-width: 650px) {
+	.tocenter {
+		margin-left: 0;
+		margin-right: 20px;
+	}
+	.input-block {
+		max-width: 100%;
+	}
+	.short-value {
+		padding: 4px 0 4px 0;
+		margin-left: 0;
+		height: 46px;
+	}
+	.popup .mf-search-select-styled {
+		min-height: 40px;
+	}
+	.popup-text-filt {
+		margin-left: 0;
+	}
 	.authorization .search-button {
 		margin-left: 10px;
 	}
