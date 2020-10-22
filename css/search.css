@@ -1856,19 +1856,6 @@ html {
 	.popup-text-filt {
 		margin-left: 0;
 	}
-	.authorization .search-button {
-		margin-left: 10px;
-	}
-	.mf-search-mobile-button {
-		border-radius: 8px;
-		margin: 0 auto;
-	}
-	.totop {
-		align-self: center;
-	}
-	.with-wrap .pricebox-label {
-		min-width: auto;
-	}
 }
 .search-form-filter-menu {
 	position: absolute;
