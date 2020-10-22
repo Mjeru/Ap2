@@ -1859,9 +1859,6 @@ html {
 	.authorization .search-button {
 		margin-left: 10px;
 	}
-	.mf-search-form-block {
-		display: none;
-	}
 	.mf-search-mobile-button {
 		border-radius: 8px;
 		margin: 0 auto;
