@@ -1820,6 +1820,9 @@ html {
 	}
 }
 @media (max-width: 650px) {
+	.popup-row > div:first-child span {
+		font-size: 16px;
+	}
 	.values-block {
 		align-items: center;
 	}
