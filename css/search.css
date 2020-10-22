@@ -1820,41 +1820,24 @@ html {
 	}
 }
 @media (max-width: 650px) {
-	.popup-row > div:first-child span {
-		font-size: 16px;
+	.authorization .search-button {
+		margin-left: 10px;
 	}
-	.popup-row {
-		flex-direction: column;
-		align-items: center;
+	.mf-search-form-block {
+		display: none;
 	}
-	.popup-row > div:first-child {
-		width: auto;
-		margin-bottom: 10px;
-		margin-top: 10px;
+	.mf-search-mobile-block {
+		display: block;
 	}
-	.values-block {
-		align-items: center;
+	.mf-search-mobile-button {
+		border-radius: 8px;
+		margin: 0 auto;
 	}
-	.popup .select {
-		margin-left: 0;
+	.totop {
+		align-self: center;
 	}
-	.tocenter {
-		margin-left: 0;
-		margin-right: 20px;
-	}
-	.input-block {
-		max-width: 100%;
-	}
-	.short-value {
-		padding: 4px 0 4px 0;
-		margin-left: 0;
-		height: 46px;
-	}
-	.popup .mf-search-select-styled {
-		min-height: 40px;
-	}
-	.popup-text-filt {
-		margin-left: 0;
+	.with-wrap .pricebox-label {
+		min-width: auto;
 	}
 }
 .search-form-filter-menu {
