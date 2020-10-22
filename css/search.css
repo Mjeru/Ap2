@@ -1828,7 +1828,9 @@ html {
 		align-items: center;
 	}
 	.popup-row > div:first-child {
-		width: unset;
+		width: auto;
+		margin-bottom: 10px;
+		margin-top: 10px;
 	}
 	.values-block {
 		align-items: center;
