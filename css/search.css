@@ -454,18 +454,6 @@ a.property-name:visited {
 .box-modal button:hover {
 	background-color: #718edc;
 }
-input:focus::-webkit-input-placeholder {
-	color: transparent;
-}
-input:focus:-moz-placeholder {
-	color: transparent;
-}
-input:focus::-moz-placeholder {
-	color: transparent;
-}
-input:focus:-ms-input-placeholder {
-	color: transparent;
-}
 .property-profit {
 	font-size: 9pt;
 	text-align: right;
