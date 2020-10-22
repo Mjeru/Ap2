@@ -1820,6 +1820,12 @@ html {
 	}
 }
 @media (max-width: 650px) {
+	.values-block {
+		align-items: center;
+	}
+	.popup .select {
+		margin-left: 0;
+	}
 	.tocenter {
 		margin-left: 0;
 		margin-right: 20px;
