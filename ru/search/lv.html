@@ -399,27 +399,11 @@
 			(375), Всего (181178)
 		</div>
 		<iframe
-			class="frame"
+			id="myIframe"
 			src="https://mjeru.github.io/Ap2/ru/widget/search/manyflats/lv@f=&currency=EUR&area=m"
-			scrolling="no"
-			style="width: 100%; border: none; display: block"
 		></iframe>
 		<script>
-			$(function () {
-				$(".frame").load(function () {
-					var target = this;
-					var content = $(target).contents().find("body");
-					$(target).height($(content).outerHeight(true));
-
-					$(content).on("DOMSubtreeModified click", function (event) {
-						setTimeout(function () {
-							$(target)
-								.stop()
-								.animate({ height: $(content).outerHeight(true) }, 200);
-						}, 400);
-					});
-				});
-			});
+			iFrameResize({ log: true }, "#myIframe");
 		</script>
 		<div class="mf-term">
 			Настоящий сайт и представленные на нем материалы носят исключительно
@@ -433,6 +417,7 @@
 		</div>
 
 		<script src="../../js/page.js"></script>
+		<script src="../../js/iframeResizer.js"></script>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script
 			async

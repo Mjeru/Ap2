@@ -11,6 +11,10 @@ body {
 	min-height: 100%;
 	box-sizing: border-box;
 }
+iframe {
+	width: 1px;
+	min-width: 100%;
+}
 .container {
 	display: block;
 	max-width: 1500px;
