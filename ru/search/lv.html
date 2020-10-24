@@ -422,7 +422,7 @@
 			iFrameResize({ log: true }, "#myIframe");
 		</script>
 		<script defer>
-			document.getElementById("myIframe").contentDocument.onload = () => {
+			$("#myIframe").on("load", function () {
 				[].forEach.call(
 					document
 						.getElementById("myIframe")
@@ -434,7 +434,7 @@
 						};
 					}
 				);
-			};
+			});
 		</script>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script
