@@ -428,7 +428,7 @@
 						.getElementById("myIframe")
 						.contentDocument.querySelector(".pagination").children,
 					(element) => {
-						element.onclick = function () {
+						element.children[0].onclick = function () {
 							console.log("click");
 							window.scrollTo({ top: 0, behavior: "smooth" });
 						};
