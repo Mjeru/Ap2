@@ -421,6 +421,18 @@
 		<script>
 			iFrameResize({ log: true }, "#myIframe");
 		</script>
+		<script>
+			[].forEach.call(
+				document
+					.getElementById("myIframe")
+					.contentDocument.querySelector(".pagination").children,
+				(element) => {
+					element.onclick = function () {
+						window.scrollTo({ top: 0, behavior: "smooth" });
+					};
+				}
+			);
+		</script>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script
 			async
