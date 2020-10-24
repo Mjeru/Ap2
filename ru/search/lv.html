@@ -422,19 +422,13 @@
 			iFrameResize({ log: true }, "#myIframe");
 		</script>
 		<script defer>
-			$("#myIframe").on("load", function () {
-				[].forEach.call(
-					document
-						.getElementById("myIframe")
-						.contentDocument.querySelector(".pagination").children,
-					(element) => {
-						element.children[0].onclick = function () {
-							console.log("click");
-							window.scrollTo({ top: 0, behavior: "smooth" });
-						};
-					}
-				);
-			});
+			document.querySelector(".myIframe").onclick = (event) => {
+				if (
+					event.target.parentNode.parentNode.classList.contain("pagination")
+				) {
+					window.scrollTo({ top: 0, behavior: "smooth" });
+				}
+			};
 		</script>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script
