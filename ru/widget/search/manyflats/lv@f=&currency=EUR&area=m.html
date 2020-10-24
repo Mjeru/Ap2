@@ -1414,6 +1414,14 @@
 
     gtag('config', 'UA-171779387-1');
 </script>
+<script>
+    [].forEach.call(document.querySelector(".pagination").children, (element)=>{
+        elem.onclick = function(){
+            window.scrollTo({top: 0,
+    behavior: "smooth"})
+        };
+        })
+</script>
 
 </body>
 </html>
