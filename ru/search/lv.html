@@ -422,7 +422,7 @@
 			iFrameResize({ log: true }, "#myIframe");
 		</script>
 		<script defer>
-			document.getElementById("myIframe").iFrame.onload = (event) => {
+			document.getElementById("myIframe").onload = (event) => {
 				if (
 					event.target.parentNode.parentNode.classList.contain("pagination")
 				) {
