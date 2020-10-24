@@ -429,6 +429,7 @@
 						.contentDocument.querySelector(".pagination").children,
 					(element) => {
 						element.onclick = function () {
+							console.log("click");
 							window.scrollTo({ top: 0, behavior: "smooth" });
 						};
 					}
